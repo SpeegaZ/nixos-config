@@ -1,0 +1,5 @@
+{
+    import = [
+	./boot.nix 
+    ];
+}

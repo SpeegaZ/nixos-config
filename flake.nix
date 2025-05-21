@@ -33,8 +33,8 @@
 	          home-manager.backupFileExtension = "backup";
 
             home-manager.users.vaayuu = import ./home-manager/home.nix;
-	        } 
-	      ];
+	  } 
+	];
       };
     };
   };

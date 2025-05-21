@@ -11,7 +11,7 @@
     enable = true;
     shellAliases = {
       btw = "echo i use nixos btw"; 
-      nrsf = "sudo nixos-rebuild switch --flake ~/nixos-configs#tsuki";
+      nrsf = "sudo nixos-rebuild switch --flake ~/nixos-config#tsuki";
       ff = "fastfetch";
       cat = "bat";
     };
