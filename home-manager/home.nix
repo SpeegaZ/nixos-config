@@ -6,16 +6,6 @@
   home.stateVersion = "24.11";
   
   programs.home-manager.enable = true;
-
-  programs.zsh = {
-    enable = true;
-    shellAliases = {
-      btw = "echo i use nixos btw"; 
-      nrsf = "sudo nixos-rebuild switch --flake ~/nixos-config#tsuki";
-      ff = "fastfetch";
-      cat = "bat";
-    };
-  };
   
   home.packages = with pkgs; [
     bat 
@@ -34,9 +24,11 @@
     vscodium
     godot
     blender
+    zsh
 
   # --- Dev-tools --- 
     gcc
+    odin
     zig
     lua
     python314
@@ -61,6 +53,7 @@
   imports = [
    
     (import ./kitty/kitty.nix { inherit pkgs; })
-
+    (import ./zsh/zsh.nix { inherit pkgs; })
+    (import ./starship/starship.nix { inherit pkgs; })
   ];
 }

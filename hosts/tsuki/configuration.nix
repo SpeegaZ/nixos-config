@@ -34,10 +34,16 @@
     };
 
 
+    /* --- VIRTUALISATION --- */
+    virtualisation.libvirtd = {
+    	enable = true;
+    };
+
+
     /* --- USERS --- */
     users.users.vaayuu = {
 	isNormalUser = true;
-	extraGroups = [ "wheel" "networkmanager" "audio" ]; # Enable ‘sudo’ for the user.
+	extraGroups = [ "wheel" "networkmanager" "audio" "libvirtd" ]; # Enable ‘sudo’ for the user.
 	shell = pkgs.zsh;
 	packages = with pkgs; [
 	    tree
@@ -59,6 +65,7 @@
 	    enable = true;
 	    videoDrivers = [ "modesetting" ];
 	    xkb.layout = "us";
+	    excludePackages = [ pkgs.xterm ];
 	};
     };
 
@@ -173,18 +180,21 @@
 	unrar
 	gnutar
 	p7zip
+	zsh
 	zip 
 	unzip
 	gvfs
 	udiskie
 	udisks2
-	zsh
+  	starship
 	swww
 	mesa
 	vulkan-loader
 	vulkan-tools
 	vulkan-validation-layers
 	libva
+	gnome-boxes
+  efibootmgr
     ];
   
   
