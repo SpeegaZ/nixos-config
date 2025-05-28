@@ -17,7 +17,7 @@
 	    enable = true;
 	    efiSupport = true;
 	    device = "nodev";
-	    useOSProber = true;
+	    useOSProber = false;
 	};
 	efi = {
 	    efiSysMountPoint = "/boot/efi";
@@ -43,7 +43,7 @@
     /* --- USERS --- */
     users.users.vaayuu = {
 	isNormalUser = true;
-	extraGroups = [ "wheel" "networkmanager" "audio" "libvirtd" ]; # Enable ‘sudo’ for the user.
+	extraGroups = [ "wheel" "networkmanager" "audio" "libvirtd" "gparted" ]; # Enable ‘sudo’ for the user.
 	shell = pkgs.zsh;
 	packages = with pkgs; [
 	    tree
@@ -194,7 +194,7 @@
 	vulkan-validation-layers
 	libva
 	gnome-boxes
-  efibootmgr
+  gparted
     ];
   
   

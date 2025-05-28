@@ -16,6 +16,7 @@
     brave
     heroic
     lutris
+    librewolf
     bottles
     libavif
     libwebp
@@ -24,10 +25,12 @@
     vscodium
     godot
     blender
-    zsh
+    obsidian
 
   # --- Dev-tools --- 
     gcc
+    rustup
+    go
     odin
     zig
     lua
@@ -49,6 +52,10 @@
       package = pkgs.tokyonight-gtk-theme;
     };
   };
+  
+  home.sessionPath = [
+    "$HOME/.cargo/bin"
+  ];
 
   imports = [
    

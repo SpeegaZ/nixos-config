@@ -8,7 +8,6 @@
 	    ff = "fastfetch";
 	    cat = "bat";
 	    vim = "nvim";
-	    doas = "sudo";
 	};
     };
 }
