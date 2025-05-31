@@ -26,6 +26,7 @@
     godot
     blender
     obsidian
+    vlc
 
   # --- Dev-tools --- 
     gcc
