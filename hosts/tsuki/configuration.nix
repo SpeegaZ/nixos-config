@@ -34,16 +34,10 @@
     };
 
 
-    /* --- VIRTUALISATION --- */
-    virtualisation.libvirtd = {
-    	enable = true;
-    };
-
-
     /* --- USERS --- */
     users.users.vaayuu = {
 	isNormalUser = true;
-	extraGroups = [ "wheel" "networkmanager" "audio" "libvirtd" "gparted" ]; # Enable ‘sudo’ for the user.
+	extraGroups = [ "wheel" "networkmanager" "audio" "gparted" ]; # Enable ‘sudo’ for the user.
 	shell = pkgs.zsh;
 	packages = with pkgs; [
 	    tree
@@ -193,8 +187,7 @@
 	vulkan-tools
 	vulkan-validation-layers
 	libva
-	gnome-boxes
-  gparted
+	gparted
     ];
   
   

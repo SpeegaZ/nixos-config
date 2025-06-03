@@ -8,6 +8,7 @@
 	    ff = "fastfetch";
 	    cat = "bat";
 	    vim = "nvim";
+	    ncgd = "sudo nix-collect-garbage -d";
 	};
     };
 }

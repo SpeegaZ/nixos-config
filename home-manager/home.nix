@@ -16,9 +16,8 @@
     brave
     heroic
     lutris
-    librewolf
     bottles
-    libavif
+    librewolf
     libwebp
     tokyonight-gtk-theme
     popsicle
@@ -31,10 +30,7 @@
   # --- Dev-tools --- 
     gcc
     rustup
-    go
-    odin
     zig
-    lua
     python314
     gnumake
     cmake
