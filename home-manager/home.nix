@@ -29,8 +29,7 @@
 
   # --- Dev-tools --- 
     gcc
-    rustup
-    zig
+    lua
     python314
     gnumake
     cmake
