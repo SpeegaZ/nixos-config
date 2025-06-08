@@ -35,10 +35,17 @@
     cmake
   ];
 
+    home.pointerCursors = {
+	gtk.enable = true;
+	name = "Bibata-Modern-Classic";
+	package = pkgs.bibata-cursors;
+	size = 24;
+    }
+
 
   gtk = {
     enable = true;
-    iconTheme = {
+    theme = {
       name = "Gruvbox-GTK-theme";
       package = pkgs.gruvbox-gtk-theme;
     };
