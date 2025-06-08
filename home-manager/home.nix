@@ -35,24 +35,21 @@
     cmake
   ];
 
-  home.pointerCursor = {
-    name = "Bibata-Modern-Classic";
-    package = pkgs.bibata-cursors;
-    size = 24;
-  };
 
   gtk = {
     enable = true;
     iconTheme = {
-      name = "Tokyonight-GTK-theme";
-      package = pkgs.tokyonight-gtk-theme;
+      name = "Gruvbox-GTK-theme";
+      package = pkgs.gruvbox-gtk-theme;
     };
+
+    cursorTheme = {
+	name = "Bibata-Modern-Classic";
+	package = pkgs.bibata-cursors;
+    };
+
   };
   
-  home.sessionPath = [
-    "$HOME/.cargo/bin"
-  ];
-
   imports = [
    
     (import ./kitty/kitty.nix { inherit pkgs; })
