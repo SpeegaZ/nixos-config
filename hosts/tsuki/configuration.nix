@@ -124,11 +124,14 @@
 	];
     };
 
+    /*
     # SDDM
     services.displayManager.sddm = {
 	enable = true;
 	wayland.enable = true;
     };
+    */
+    services.displayManager.ly.enable = true;
 
     # ZSH
     programs.zsh.enable = true;
@@ -194,6 +197,7 @@
     /* --- FONT_PACKAGES --- */
     fonts.packages = with pkgs; [
 	nerd-fonts.jetbrains-mono
+	nerd-fonts.iosevka-term
 	font-awesome
     ];
 

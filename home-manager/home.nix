@@ -15,17 +15,17 @@
     bibata-cursors
     brave
     heroic
-    lutris
-    bottles
     librewolf
     libwebp
-    tokyonight-gtk-theme
     popsicle
     vscodium
     godot
     blender
     obsidian
     vlc
+    papirus-icon-theme
+    gruvbox-gtk-theme
+    tmux
 
   # --- Dev-tools --- 
     gcc
@@ -35,19 +35,26 @@
     cmake
   ];
 
-    home.pointerCursors = {
+    home.pointerCursor = {
 	gtk.enable = true;
 	name = "Bibata-Modern-Classic";
 	package = pkgs.bibata-cursors;
 	size = 24;
-    }
+    };
 
+    qt.enable = true;
+    qt.platformTheme.name = "gtk";
 
   gtk = {
     enable = true;
     theme = {
-      name = "Gruvbox-GTK-theme";
+      name = "Gruvbox-Dark";
       package = pkgs.gruvbox-gtk-theme;
+    };
+
+    iconTheme = {
+	name = "Papirus-Dark";
+	package = pkgs.papirus-icon-theme;
     };
 
     cursorTheme = {
@@ -56,6 +63,12 @@
     };
 
   };
+
+    home.sessionVariables = {
+	XDG_CURRENT_DESKTOP = "Hyprland";
+	XDG_SESSION_DESKTOP = "Hyprland";
+	GDK_BACKEND = "wayland,x11";
+    };
   
   imports = [
    
