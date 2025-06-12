@@ -24,7 +24,7 @@
     obsidian
     vlc
     papirus-icon-theme
-    gruvbox-gtk-theme
+    graphite-gtk-theme
     tmux
 
   # --- Dev-tools --- 
@@ -48,8 +48,8 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Gruvbox-Dark";
-      package = pkgs.gruvbox-gtk-theme;
+      name = "Graphite-Dark";
+      package = pkgs.graphite-gtk-theme;
     };
 
     iconTheme = {
