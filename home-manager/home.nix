@@ -23,27 +23,29 @@
     blender
     obsidian
     vlc
+    zathura
     papirus-icon-theme
     graphite-gtk-theme
     tmux
+   # prismlauncher
 
   # --- Dev-tools --- 
-    gcc
+    gcc15
     lua
     python314
     gnumake
     cmake
   ];
 
-    home.pointerCursor = {
-	gtk.enable = true;
-	name = "Bibata-Modern-Classic";
-	package = pkgs.bibata-cursors;
-	size = 24;
-    };
+  home.pointerCursor = {
+    gtk.enable = true;
+    name = "Bibata-Modern-Classic";
+    package = pkgs.bibata-cursors;
+    size = 24;
+  };
 
-    qt.enable = true;
-    qt.platformTheme.name = "gtk";
+  qt.enable = true;
+  qt.platformTheme.name = "gtk";
 
   gtk = {
     enable = true;
@@ -53,22 +55,21 @@
     };
 
     iconTheme = {
-	name = "Papirus-Dark";
-	package = pkgs.papirus-icon-theme;
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
     };
 
     cursorTheme = {
-	name = "Bibata-Modern-Classic";
-	package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Classic";
+      package = pkgs.bibata-cursors;
     };
-
   };
 
-    home.sessionVariables = {
-	XDG_CURRENT_DESKTOP = "Hyprland";
-	XDG_SESSION_DESKTOP = "Hyprland";
-	GDK_BACKEND = "wayland,x11";
-    };
+  home.sessionVariables = {
+    XDG_CURRENT_DESKTOP = "Hyprland";
+    XDG_SESSION_DESKTOP = "Hyprland";
+    GDK_BACKEND = "wayland,x11";
+  };
   
   imports = [
    
