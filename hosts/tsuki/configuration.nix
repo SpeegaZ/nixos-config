@@ -64,6 +64,10 @@
   };
 
 
+  /* --- POLKIT --- */ 
+  security.polkit.enable = true;
+
+
   /* --- INPUT_SERVICES --- */
   services = {
     libinput = {
@@ -190,13 +194,12 @@
     vulkan-tools
     vulkan-validation-layers
     libva
-    gparted
+    lxqt.lxqt-policykit
   ];
   
   
   /* --- FONT_PACKAGES --- */
   fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
     nerd-fonts.iosevka-term
     font-awesome
   ];

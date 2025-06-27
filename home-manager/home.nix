@@ -27,7 +27,8 @@
     papirus-icon-theme
     graphite-gtk-theme
     tmux
-   # prismlauncher
+    gearlever
+    
 
   # --- Dev-tools --- 
     gcc15
