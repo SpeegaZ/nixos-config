@@ -77,5 +77,6 @@
     (import ./kitty/kitty.nix { inherit pkgs; })
     (import ./zsh/zsh.nix { inherit pkgs; })
     (import ./starship/starship.nix { inherit pkgs; })
+    (import ./vscodium/vscodium.nix { inherit pkgs; })
   ];
 }
