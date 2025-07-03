@@ -195,6 +195,7 @@
     vulkan-validation-layers
     libva
     lxqt.lxqt-policykit
+    distrobox
   ];
   
   
