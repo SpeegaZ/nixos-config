@@ -67,6 +67,13 @@
   /* --- POLKIT --- */ 
   security.polkit.enable = true;
 
+  
+  /* --- PODMAN --- */
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+  };
+
 
   /* --- INPUT_SERVICES --- */
   services = {
