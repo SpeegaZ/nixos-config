@@ -80,7 +80,7 @@
 	* {
 		
 	    border : none;
-	    font-family : IosevkaTerm Nerd Font Mono, sans-serif;
+	    font-family : Iosevka Nerd Font Mono;
 	    font-size : 14px;
 	}
 
@@ -275,7 +275,7 @@
       position = "top";
       margin = "8px 10px -2px 10px";	
 
-      modules-left = [ "custom/distro" "hyprland/workspaces" "hyprland/window" ];
+      modules-left = [ "custom/distro" "hyprland/workspaces" ];
       modules-center = [ "clock" ];
       modules-right = [ "temperature" "memory" "cpu" "pulseaudio" "backlight" "battery" "tray" "network"  "custom/power" ];
 
