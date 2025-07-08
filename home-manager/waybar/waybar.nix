@@ -138,8 +138,134 @@
 
 	#workspaces button:hover {
 	    background-color : rgba(0, 0, 0, 0);	    
+	}
 
+	#workspace button.active {
+	    color: @accent;
+	}
 
+	#workspace button.urgent {
+	    color: @red;
+	}
+
+	#cpu {
+	    padding: 0 10px;
+	    color: @alt_cyan;
+	}
+
+	#memory {
+	    padding: 0 10px;
+	    color: @alt_cyan;
+	}
+
+	#temperature {
+	    padding: 0 10px;
+	    color: blue;
+	}
+
+	#temperature.critical {
+	    background-color: @red;
+	    padding: 0 10px;
+	    color: @background;
+	}
+
+        #custom-media {
+          color: #c678dd;
+          padding: 0 10px;
+          color: @background;
+        }
+
+        #custom-fans {
+          padding: 0 10px;
+          color: @blue;
+        }
+
+        #clock {
+          padding: 0 10px;
+          color: @blue;
+        }
+
+        #idle_inhibitor {
+          padding: 0 10px;
+          color: @foreground;
+        }
+
+        #language {
+          padding: 0 10px;
+          color: @blue;
+        }
+
+        #pulseaudio {
+          padding: 0 10px;
+          color: @yellow;
+        }
+
+        #pulseaudio.muted {
+          padding: 0 10px;
+          background-color: @red;
+          color: @background;
+        }
+
+        #backlight {
+          padding: 0 10px;
+          color: @yellow;
+        }
+
+        #battery {
+          padding: 0 10px;
+          color: @alt_green;
+        }
+
+        #battery.charging, #battery.plugged {
+          padding: 0 10px;
+          background-color: @alt_green;
+          color: @background;
+        }
+
+        @keyframes blink {
+            to {
+                background-color: @background;
+                color: @red;
+            }
+        }
+
+        #battery.critical:not(.charging) {
+            padding: 0 10px;
+            background-color: @red;
+            color: @background;
+            animation-name: blink;
+            animation-duration: 0.5s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        #network {
+            padding: 0 10px;
+            color: @blue;
+        }
+
+        #custom-distro {
+            color: @accent;
+            background-color: @background;
+            font-size: 25px;
+            margin: 1px;
+            padding: 0px 0px 0px 6px;
+        }
+
+        #network.disconnected {
+            padding: 0 10px;
+            background-color: @red;
+            color: @background;
+        }
+        #custom-powermenu {
+            background-color: @red;
+            color: @background;
+            font-size: 15px;
+            padding-right: 6px;
+            padding-left: 11px;
+            margin: 5px;
+        }
 	    
 	'';	
 
@@ -151,7 +277,7 @@
 
       modules-left = [ "custom/distro" "hyprland/workspaces" "hyprland/window" ];
       modules-center = [ "clock" ];
-      modules-right = [ "temperature" "memory" "cpu" "pulseaudio" "backlight" "battery" "custom/power" "tray" ];
+      modules-right = [ "temperature" "memory" "cpu" "pulseaudio" "backlight" "battery" "tray" "network"  "custom/power" ];
 
 
       "hyprland-workspaces" = {
@@ -177,11 +303,88 @@
       };
 
       "custom/distrologo" = {
+	on-click "rofi -show drun";
 	format = "{icon}";
 	format-icons = { 
 	  "default" = ;
 	};
       };
+
+      "pulseaudio" = {
+          format = "{icon}{volume}% {format_source}";
+          format-bluetooth = "{icon} {volume}%";
+          format-bluetooth-muted = "   {volume}%";
+          format-source = "";
+          format-source-muted = "";
+          format-muted = "  {format_source}";
+          format-icons = {
+              headphone = " ";
+              hands-free = " ";
+              headset = " ";
+              phone = " ";
+              portable = " ";
+              car = " ";
+              default = [" " " " "  "];
+          };
+          tooltip-format = "{desc} {volume}%";
+          on-click = "pactl set-sink-mute @DEFAULT_SINK@ toggle";
+          on-click-right = "pactl set-source-mute @DEFAULT_SOURCE@ toggle";
+          on-click-middle = "pavucontrol";
+          on-click-release = "sleep 0";
+          on-click-middle-release = "sleep 0";
+        };
+
+
+	"network" = {
+	    format-wifi = " {essid} {signalStrength}%";
+	    format-ethernet = "{ifname}: {ipaddr}/{cidr}  ";
+	    format-linked = "{ifname} (No IP)  ";
+	    format-disconnected = "󰤮 Disconnected";
+	    on-click = "wifi-menu";
+	    on-click-release = "sleep 0";
+	    tooltip-format = "{essid} {signalStrength}%";
+        };
+
+	"battery" = {
+          states = {
+          warning = "30";
+          critical = "15";
+        };
+          format = "{icon}{capacity}%";
+          tooltip-format = "{timeTo} {capacity}%";
+          format-charging = "󱐋{capacity}%";
+          format-plugged = " {capacity}%";
+          format-alt = "{time} {icon}";
+          format-icons = ["  " "  " "  " "  " "  "];
+        };
+        
+	
+
+	 "tray" = {
+          spacing = 8;
+        };
+
+        "clock" = {
+          tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+	        format = " {:%H:%M}";
+	        format-alt = " {:%A, %B %d, %Y}";
+        };
+
+        "cpu" = {
+          format = " {usage}%";
+          tooltip = "false";
+        };
+
+        "memory" = {
+          format = " {}%";
+        };
+
+        "backlight" = {
+          format = "{icon}{percent}%";
+          format-icons = ["󰃞 " "󰃟 " "󰃠 "];
+          on-scroll-up = "light -A 1";
+          on-scroll-down = "light -U 1";
+        };
     };
   };
   };

@@ -82,5 +82,6 @@
     (import ./zsh/zsh.nix { inherit pkgs; })
     (import ./starship/starship.nix { inherit pkgs; })
     (import ./vscodium/vscodium.nix { inherit pkgs; })
+    (import ./waybar/waybar.nix { inherit pkgs; })
   ];
 }
