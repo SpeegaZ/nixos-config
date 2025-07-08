@@ -28,6 +28,10 @@
     graphite-gtk-theme
     tmux
     gearlever
+    grim
+    slurp
+    emacs
+    vivaldi
     
 
   # --- Dev-tools --- 
