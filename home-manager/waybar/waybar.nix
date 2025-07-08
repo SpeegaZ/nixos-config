@@ -290,7 +290,7 @@
 	};
 
 	persistant-workspaces = {
-	  "*" : 4;
+	  "*" = 4;
 	};
       };
 
@@ -303,10 +303,10 @@
       };
 
       "custom/distrologo" = {
-	on-click "rofi -show drun";
+	on-click = "rofi -show drun";
 	format = "{icon}";
 	format-icons = { 
-	  "default" = ;
+	  "default" = "";
 	};
       };
 
@@ -388,6 +388,6 @@
     };
   };
   };
-};
+}
 	    
 
