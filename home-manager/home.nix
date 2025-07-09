@@ -13,6 +13,7 @@
     floorp
     feh
     bibata-cursors
+    volantes-cursors
     brave
     heroic
     librewolf
@@ -25,12 +26,10 @@
     vlc
     zathura
     papirus-icon-theme
-    graphite-gtk-theme
-    tmux
+    gruvbox-gtk-theme
     gearlever
     grim
     slurp
-    emacs
     vivaldi
     
 
@@ -44,8 +43,8 @@
 
   home.pointerCursor = {
     gtk.enable = true;
-    name = "Bibata-Modern-Classic";
-    package = pkgs.bibata-cursors;
+    name = "volantes_cursors";
+    package = pkgs.volantes-cursors;
     size = 24;
   };
 
@@ -55,8 +54,8 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Graphite-Dark";
-      package = pkgs.graphite-gtk-theme;
+      name = "Gruvbox-Dark";
+      package = pkgs.gruvbox-gtk-theme;
     };
 
     iconTheme = {

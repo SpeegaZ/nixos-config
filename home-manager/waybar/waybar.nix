@@ -297,7 +297,7 @@
 
 
       "custom/power" = {
-	format = " ";
+	format = "";
 	tooltip = false;
 	on-click = "wlogout";
       };
