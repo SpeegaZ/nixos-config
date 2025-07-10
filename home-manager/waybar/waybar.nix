@@ -327,11 +327,7 @@
               default = [" " " " "  "];
           };
           tooltip-format = "{desc} {volume}%";
-          on-click = "pactl set-sink-mute @DEFAULT_SINK@ toggle";
-          on-click-right = "pactl set-source-mute @DEFAULT_SOURCE@ toggle";
-          on-click-middle = "pavucontrol";
-          on-click-release = "sleep 0";
-          on-click-middle-release = "sleep 0";
+          on-click = "pavucontrol";
         };
 
 
