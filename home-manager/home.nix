@@ -13,7 +13,6 @@
     floorp
     feh
     bibata-cursors
-    volantes-cursors
     brave
     heroic
     librewolf
@@ -43,8 +42,8 @@
 
   home.pointerCursor = {
     gtk.enable = true;
-    name = "volantes_cursors";
-    package = pkgs.volantes-cursors;
+    name = "Bibata-Modern-Ice";
+    package = pkgs.bibata-cursors;
     size = 24;
   };
 
@@ -64,7 +63,7 @@
     };
 
     cursorTheme = {
-      name = "Bibata-Modern-Classic";
+      name = "Bibata-Modern-Ice";
       package = pkgs.bibata-cursors;
     };
   };
