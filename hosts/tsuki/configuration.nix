@@ -37,7 +37,7 @@
   /* --- USERS --- */
   users.users.vaayuu = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "audio" "gparted" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" "audio" "gparted" "libvirtd" "virtualbox" ]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
     packages = with pkgs; [
       tree
@@ -72,7 +72,8 @@
   virtualisation.podman = {
     enable = true;
     dockerCompat = true;
-  };
+ };
+
 
 
   /* --- INPUT_SERVICES --- */
@@ -163,6 +164,7 @@
   # Steam
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/vaayuu/.steam/root/compatibilitytools.d";
+    NIXOS_OZONE_WL = 1;
   };
 
 

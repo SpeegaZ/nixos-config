@@ -271,7 +271,7 @@
 
     settings = {
       mainBar = {
-      layer = "top";
+      layer = "bottom";
       position = "top";
       margin = "8px 10px -2px 10px";	
 
