@@ -8,9 +8,18 @@
 	    url = "github:nix-community/home-manager";
 	    inputs.nixpkgs.follows = "nixpkgs";
 	};
+	/*
+	hyprland.url = "github:hyprwm/Hyprland";
+	hyprland-plugins = {
+	    url = "github:hyprwm/hyprland-plugins";
+	    inputs.nixpkgs.follows = "nixpkgs";
+	};
+	flake-parts.url = "github:hercules-ci/flake-parts";
+	*/
+	maomaowm.url = "github:DreamMaoMao/maomaowm";
     };
 
-    outputs = { self, nixpkgs, nixpkgs-stable, home-manager, ... } @ inputs : 
+    outputs = { self, nixpkgs, nixpkgs-stable, home-manager, flake-parts, maomaowm, ... } @ inputs : 
   
     let 
 	system = "x86_64-linux";
@@ -25,6 +34,8 @@
 		modules = [
 		    # Tsuki configuration.nix
 		    ./hosts/tsuki/configuration.nix
+
+		    inputs.maomaowm.nixosModules.maomaowm 
 
 		    home-manager.nixosModules.home-manager {
 			home-manager.useGlobalPkgs = true;

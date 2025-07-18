@@ -13,6 +13,7 @@
 	vscodevim.vim
 	emmanuelbeziat.vscode-great-icons
 	ritwickdey.liveserver
+
     ];
   };
 }

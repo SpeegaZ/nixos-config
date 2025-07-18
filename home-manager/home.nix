@@ -11,6 +11,7 @@
     bat 
     protonvpn-gui
     floorp
+    vivaldi
     feh
     bibata-cursors
     brave
@@ -22,14 +23,14 @@
     godot
     blender
     obsidian
-    vlc
+    mpv
     zathura
     papirus-icon-theme
     gruvbox-gtk-theme
     gearlever
     grim
     slurp
-    vivaldi
+    mako
     
 
   # --- Dev-tools --- 

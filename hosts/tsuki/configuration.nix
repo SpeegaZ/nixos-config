@@ -37,7 +37,7 @@
   /* --- USERS --- */
   users.users.vaayuu = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "audio" "gparted" "libvirtd" "virtualbox" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" "audio" ]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
     packages = with pkgs; [
       tree
@@ -66,14 +66,6 @@
 
   /* --- POLKIT --- */ 
   security.polkit.enable = true;
-
-  
-  /* --- PODMAN --- */
-  virtualisation.podman = {
-    enable = true;
-    dockerCompat = true;
- };
-
 
 
   /* --- INPUT_SERVICES --- */
@@ -129,13 +121,16 @@
     xwayland.enable = true;
   };
 
-
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
     ];
   };
+
+
+  # MAOMAOWM
+  programs.maomaowm.enable = true;
 
     /*
     # SDDM
@@ -205,13 +200,16 @@
     vulkan-validation-layers
     libva
     lxqt.lxqt-policykit
-    distrobox
   ];
   
   
   /* --- FONT_PACKAGES --- */
   fonts.packages = with pkgs; [
     nerd-fonts.iosevka
+    noto-fonts
+    noto-fonts-emoji
+    fontconfig
+    liberation_ttf
     font-awesome
   ];
 

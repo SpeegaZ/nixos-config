@@ -30,7 +30,7 @@
 	@define-color alt_white #c0caf5; */
 
 	/* Kanagawa Palette */ 
-      /* @define-color foreground #dcd7ba;
+        @define-color foreground #dcd7ba;
 	@define-color background #1f1f28;
 	@define-color alt_background #25252f;
 	@define-color accent #7aa89f;
@@ -51,9 +51,11 @@
 	@define-color alt_blue #7fb4ca;
 	@define-color alt_magenta #938aa9;
 	@define-color alt_cyan #7aa89f;
-	@define-color alt_white #dcd7ba; */
+	@define-color alt_white #dcd7ba; 
+
 
 	/* Gruvbox Palette */ 
+	/*
 	@define-color foreground #ebdbb2;
 	@define-color background #1d2021;
 	@define-color alt_background #282828;
@@ -75,7 +77,7 @@
 	@define-color alt_blue #7daea3;
 	@define-color alt_magenta #d3869b;
 	@define-color alt_cyan #8ec07c;
-	@define-color alt_white #ebdbb2;        
+	@define-color alt_white #ebdbb2; */        
 
 	* {
 		
