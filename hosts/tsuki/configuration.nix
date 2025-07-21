@@ -159,7 +159,6 @@
   # Steam
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/vaayuu/.steam/root/compatibilitytools.d";
-    NIXOS_OZONE_WL = 1;
   };
 
 
