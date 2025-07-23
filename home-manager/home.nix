@@ -30,6 +30,8 @@
     gearlever
     grim
     slurp
+    gimp
+    kdePackages.kdenlive
     mako
     
 
