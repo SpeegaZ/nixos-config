@@ -15,6 +15,7 @@
     feh
     bibata-cursors
     brave
+    lutris
     heroic
     librewolf
     libwebp
@@ -33,6 +34,7 @@
     gimp
     kdePackages.kdenlive
     mako
+    sakura
     
 
   # --- Dev-tools --- 

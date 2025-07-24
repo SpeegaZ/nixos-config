@@ -129,8 +129,6 @@
   };
 
 
-  # MAOMAOWM
-  programs.maomaowm.enable = true;
 
     /*
     # SDDM

@@ -8,10 +8,9 @@
 	    url = "github:nix-community/home-manager";
 	    inputs.nixpkgs.follows = "nixpkgs";
 	};
-	maomaowm.url = "github:DreamMaoMao/maomaowm";
     };
 
-    outputs = { self, nixpkgs, nixpkgs-stable, home-manager, flake-parts, maomaowm, ... } @ inputs : 
+    outputs = { self, nixpkgs, nixpkgs-stable, home-manager, flake-parts,  ... } @ inputs : 
   
     let 
 	system = "x86_64-linux";
@@ -26,8 +25,6 @@
 		modules = [
 		    # Tsuki configuration.nix
 		    ./hosts/tsuki/configuration.nix
-
-		    inputs.maomaowm.nixosModules.maomaowm 
 
 		    home-manager.nixosModules.home-manager {
 			home-manager.useGlobalPkgs = true;
