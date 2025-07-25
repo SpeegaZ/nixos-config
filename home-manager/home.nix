@@ -31,11 +31,13 @@
     gearlever
     grim
     slurp
-    gimp
+    gimp3
     kdePackages.kdenlive
     mako
     sakura
-    
+    helix 
+  
+
 
   # --- Dev-tools --- 
     gcc15
