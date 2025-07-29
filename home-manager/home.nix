@@ -15,33 +15,29 @@
     feh
     bibata-cursors
     brave
-    lutris
     heroic
     librewolf
     libwebp
     popsicle
-    vscodium
     godot
+    vscodium
     blender
     obsidian
     mpv
     zathura
     papirus-icon-theme
-    gruvbox-gtk-theme
+    kanagawa-gtk-theme
     gearlever
     grim
     slurp
     gimp3
     kdePackages.kdenlive
     mako
-    sakura
-    helix 
   
 
 
   # --- Dev-tools --- 
     gcc15
-    lua
     python314
     gnumake
     cmake
