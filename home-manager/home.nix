@@ -3,15 +3,15 @@
 {
   home.username = "vaayuu";
   home.homeDirectory = "/home/vaayuu";
-  home.stateVersion = "24.11";
+  home.stateVersion = "25.05";
   
   programs.home-manager.enable = true;
   
   home.packages = with pkgs; [
     bat 
     protonvpn-gui
-    floorp
     vivaldi
+    firefox-devedition
     feh
     bibata-cursors
     brave
