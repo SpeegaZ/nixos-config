@@ -33,6 +33,7 @@
     gimp3
     kdePackages.kdenlive
     mako
+    
   
 
 

@@ -112,6 +112,12 @@
       libvdpau-va-gl
     ];
   };
+  
+
+  virtualisation = {
+    containers.enable = true;
+    podman.enable = true;
+  };
 
 
   /* --- SYSTEM_PROGRAMS --- */
@@ -197,12 +203,9 @@
     vulkan-validation-layers
     libva
     lxqt.lxqt-policykit
-
-    # GStreamer 
-    #gst_all_1.gstreamer  gst_all_1.gst-plugins-base  gst_all_1.gst-plugins-good  gst_all_1.gst-plugins-bad  gst_all_1.gst-plugins-ugly  gst_all_1.gst-libav
-
-    # ffmpegthumbnailer
     ffmpegthumbnailer
+    distrobox
+    podman-tui
   ];
   
   
