@@ -31,7 +31,10 @@
     grim
     slurp
     gimp3
+    # music players
     kdePackages.kdenlive
+    rhythmbox
+    yt-dlp
     mako
     
   

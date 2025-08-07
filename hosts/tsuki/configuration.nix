@@ -114,12 +114,6 @@
   };
   
 
-  virtualisation = {
-    containers.enable = true;
-    podman.enable = true;
-  };
-
-
   /* --- SYSTEM_PROGRAMS --- */
   # HYPRLAND
   programs.hyprland = {
@@ -204,8 +198,8 @@
     libva
     lxqt.lxqt-policykit
     ffmpegthumbnailer
-    distrobox
-    podman-tui
+    ffmpeg
+    
   ];
   
   
