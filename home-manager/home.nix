@@ -36,6 +36,7 @@
     rhythmbox
     yt-dlp
     mako
+	tmux
     
   
 
@@ -45,6 +46,7 @@
     python314
     gnumake
     cmake
+    lua
   ];
 
   home.pointerCursor = {
