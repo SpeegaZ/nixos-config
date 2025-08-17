@@ -37,6 +37,7 @@
     yt-dlp
     mako
 	tmux
+	nyxt
     
   
 
