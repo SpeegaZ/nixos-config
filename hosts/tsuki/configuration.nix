@@ -197,9 +197,6 @@
     vulkan-validation-layers
     libva
     lxqt.lxqt-policykit
-    ffmpegthumbnailer
-    ffmpeg
-    
   ];
   
   

@@ -16,7 +16,6 @@
     bibata-cursors
     brave
     heroic
-    librewolf
     libwebp
     popsicle
     godot
@@ -31,22 +30,14 @@
     grim
     slurp
     gimp3
-    # music players
     kdePackages.kdenlive
-    rhythmbox
-    yt-dlp
     mako
 	tmux
-	nyxt
-    
-  
-
 
   # --- Dev-tools --- 
     gcc15
     python314
     gnumake
-    cmake
     lua
   ];
 
