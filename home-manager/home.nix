@@ -33,6 +33,7 @@
     kdePackages.kdenlive
     mako
 	tmux
+	librewolf
 
   # --- Dev-tools --- 
     gcc15
