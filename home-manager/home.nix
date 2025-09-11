@@ -20,7 +20,6 @@
     popsicle
     godot
     vscodium
-    blender
     obsidian
     mpv
     zathura
@@ -40,6 +39,7 @@
     python314
     gnumake
     lua
+	luajitPackages.luarocks_bootstrap
   ];
 
   home.pointerCursor = {

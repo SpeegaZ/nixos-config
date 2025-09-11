@@ -10,7 +10,7 @@
       window_padding_width = 4;
 
       cursor_shape = "block";
-      cursor_blink = true;
+      cursor_blink = false;
     };
 
     extraConfig = ''

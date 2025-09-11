@@ -203,6 +203,7 @@
   /* --- FONT_PACKAGES --- */
   fonts.packages = with pkgs; [
     nerd-fonts.iosevka
+	nerd-fonts.symbols-only
     noto-fonts
     noto-fonts-emoji
     fontconfig
