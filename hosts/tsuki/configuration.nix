@@ -173,7 +173,7 @@
     wlsunset
     kitty
     btop
-    rofi-wayland
+    rofi
     waybar
     mangohud
     protonup
