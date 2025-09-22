@@ -33,7 +33,7 @@
     mako
 	tmux
 	era
-	
+	openutau	
 
 	
 
