@@ -34,13 +34,14 @@
 	tmux
 	era
 	openutau	
+	discord
 
-	
 
   # --- Dev-tools --- 
     gcc15
     python314
     gnumake
+	cmake
     lua
 	luajitPackages.luarocks_bootstrap
   ];
