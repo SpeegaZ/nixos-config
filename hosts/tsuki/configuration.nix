@@ -112,6 +112,8 @@
       libvdpau-va-gl
     ];
   };
+
+  /* --- VIRTUALISATION --- */
   
 
   /* --- SYSTEM_PROGRAMS --- */
@@ -192,11 +194,19 @@
     starship
     swww
     mesa
+	mesa-demos
     vulkan-loader
     vulkan-tools
     vulkan-validation-layers
     libva
     lxqt.lxqt-policykit
+
+	man
+	man-pages
+	man-pages-posix
+	stdmanpages
+	stdman
+	tldr
   ];
   
   

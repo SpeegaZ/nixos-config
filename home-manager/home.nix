@@ -35,6 +35,7 @@
 	era
 	openutau	
 	discord
+	librewolf
 
 
   # --- Dev-tools --- 
