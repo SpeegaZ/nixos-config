@@ -35,7 +35,6 @@
 	era
 	openutau	
 	discord
-	librewolf
 
 
   # --- Dev-tools --- 
@@ -44,7 +43,6 @@
     gnumake
 	cmake
     lua
-	luajitPackages.luarocks_bootstrap
   ];
 
   home.pointerCursor = {
