@@ -198,6 +198,8 @@
     vulkan-loader
     vulkan-tools
     vulkan-validation-layers
+	microcode-intel
+	inteltool
     libva
     lxqt.lxqt-policykit
 

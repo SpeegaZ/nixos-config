@@ -35,6 +35,7 @@
 	era
 	openutau	
 	discord
+	libresprite
 
 
   # --- Dev-tools --- 
