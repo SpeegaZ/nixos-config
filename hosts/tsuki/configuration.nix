@@ -203,6 +203,10 @@
     libva
     lxqt.lxqt-policykit
 
+	(discord.override {
+		withVencord = true;
+	})
+
 	man
 	man-pages
 	man-pages-posix

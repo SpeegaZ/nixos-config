@@ -34,8 +34,9 @@
 	tmux
 	era
 	openutau	
-	discord
-	libresprite
+	librewolf
+	alacritty
+	contour
 
 
   # --- Dev-tools --- 
