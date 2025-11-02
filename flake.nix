@@ -9,6 +9,15 @@
 	    	url = "github:nix-community/home-manager";
 	    	inputs.nixpkgs.follows = "nixpkgs";
 		};
+
+
+		/*
+		hyprland.url = "github:hyprwm/Hyprland";
+		hyprland-plugin = {
+	    	url = "github:hyprwm/hyprland-plugins";
+	    	inputs.hyprland.follows = "hyprland";
+		};
+		*/
     };
 
     outputs = { self, nixpkgs, nixpkgs-stable, home-manager, flake-parts,  ... } @ inputs : 
@@ -26,6 +35,7 @@
 				modules = [
 		    		# Tsuki configuration.nix
 		    		./hosts/tsuki/configuration.nix
+
 
 		    		home-manager.nixosModules.home-manager {
 						home-manager.useGlobalPkgs = true;

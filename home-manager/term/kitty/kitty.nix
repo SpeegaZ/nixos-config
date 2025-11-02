@@ -5,7 +5,7 @@
     enable = true;
     settings = { 
       font_family = "Iosevka Nerd Font Mono";
-      font_size = 13.0;
+      font_size = 15.0;
       background_opacity = 1;
       window_padding_width = 4;
 

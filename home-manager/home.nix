@@ -24,21 +24,24 @@
     mpv
     zathura
     papirus-icon-theme
-    kanagawa-gtk-theme
+    gruvbox-gtk-theme
     gearlever
     grim
     slurp
     gimp3
     kdePackages.kdenlive
     mako
-	tmux
 	era
 	openutau	
 	librewolf
+	vdhcoapp
 	alacritty
+	emacs
+
+	ghostty
 	contour
-
-
+	dbeaver-bin
+	
   # --- Dev-tools --- 
     gcc15
     python314
@@ -60,8 +63,8 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Kanagawa-B-LB";
-      package = pkgs.kanagawa-gtk-theme;
+      name = "Gruvbox-Dark";
+      package = pkgs.gruvbox-gtk-theme;
     };
 
     iconTheme = {
@@ -83,10 +86,11 @@
   
   imports = [
    
-    (import ./kitty/kitty.nix { inherit pkgs; })
-    (import ./zsh/zsh.nix { inherit pkgs; })
-    (import ./starship/starship.nix { inherit pkgs; })
-    (import ./vscodium/vscodium.nix { inherit pkgs; })
-    (import ./waybar/waybar.nix { inherit pkgs; })
+    (import ./term/kitty/kitty.nix { inherit pkgs; })
+    (import ./shell/zsh/zsh.nix { inherit pkgs; })
+    (import ./shell/starship/starship.nix { inherit pkgs; })
+    (import ./editor/vscodium/vscodium.nix { inherit pkgs; })
+    (import ./util/waybar/waybar.nix { inherit pkgs; })
+    (import ./wm/hyprland/hyprland.nix { inherit pkgs; })
   ];
 }

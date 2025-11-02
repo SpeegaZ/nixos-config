@@ -41,6 +41,7 @@
     shell = pkgs.zsh;
     packages = with pkgs; [
       tree
+	  file
     ];
   };
 
@@ -54,6 +55,7 @@
 
 
   /* --- X11_settings --- */
+  /*
   services = {
     xserver = {
       enable = true;
@@ -62,6 +64,7 @@
       excludePackages = [ pkgs.xterm ];
     };
   };
+  */
 
 
   /* --- POLKIT --- */ 
@@ -108,7 +111,7 @@
     enable = true;
     extraPackages = with pkgs; [
       intel-media-driver
-      vaapiVdpau
+      libva-vdpau-driver
       libvdpau-va-gl
     ];
   };
@@ -130,6 +133,11 @@
     ];
   };
 
+  /* --- SQL --- */
+  services.mysql = {
+  	enable = true;
+	package = pkgs.mariadb;
+  };
 
 
     /*
@@ -142,7 +150,7 @@
   services.displayManager.ly.enable = true;
 
   # ZSH
-  programs.zsh.enable = true;
+  programs.fish.enable = true;
 
   # FIREFOX
   programs.firefox.enable = true;
@@ -166,7 +174,8 @@
   environment.systemPackages = with pkgs; [
     brightnessctl
     hyprland
-    neovim                    
+	playerctl
+    neovim    
     wget
     git
     fastfetch
@@ -178,14 +187,20 @@
     rofi
     waybar
     mangohud
-    protonup
-    nautilus
+    protonup-ng
+	
+	#file-manager
+	xfce.thunar
+	xfce.thunar-archive-plugin
+	xfce.thunar-media-tags-plugin
+	xfce.tumbler
+
     file-roller
     pavucontrol
     unrar
     gnutar
     p7zip
-    zsh
+    fish
     zip 
     unzip
     gvfs
@@ -198,8 +213,6 @@
     vulkan-loader
     vulkan-tools
     vulkan-validation-layers
-	microcode-intel
-	inteltool
     libva
     lxqt.lxqt-policykit
 
@@ -221,7 +234,7 @@
     nerd-fonts.iosevka
 	nerd-fonts.symbols-only
     noto-fonts
-    noto-fonts-emoji
+    noto-fonts-color-emoji
     fontconfig
     liberation_ttf
     font-awesome

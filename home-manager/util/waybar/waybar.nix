@@ -285,6 +285,7 @@
       "hyprland-workspaces" = {
 	disable-scroll = true;
 	all-outputs = true;
+	ignore-hidden = false;
 	warp-on-scroll = true;
 	format = "{name}";
 	format-icons = {
