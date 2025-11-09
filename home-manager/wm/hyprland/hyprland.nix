@@ -23,7 +23,7 @@ monitor= eDP-1, 1920x1080@60, 0x0, 1
 ###################
 
 # Set programs that you use
-$terminal = kitty
+$terminal = alacritty
 $fileManager = thunar
 $menu = rofi -show drun
 $screenshot = ~/nixos-config/home-manager/scripts/snap.sh
@@ -71,6 +71,7 @@ general {
 plugin {
 	hyprscrolling {
 		fullscreen_on_one_column = true
+		column_width = 1
 		follow_focus = true
 	}
 }

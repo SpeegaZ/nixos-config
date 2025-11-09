@@ -9,6 +9,15 @@
 
   /* --- EXPERIMENTAL_FEATURES --- */
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  nix = {
+  	settings = {
+	  auto-optimise-store = true;
+	  warn-dirty = false;
+	};
+	optimise.automatic = true;
+  };
+	  
     
 
   /* --- BOOTLOADER --- */
@@ -55,16 +64,14 @@
 
 
   /* --- X11_settings --- */
-  /*
   services = {
     xserver = {
       enable = true;
       videoDrivers = [ "modesetting" ];
       xkb.layout = "us";
       excludePackages = [ pkgs.xterm ];
-    };
+	};
   };
-  */
 
 
   /* --- POLKIT --- */ 
@@ -150,7 +157,7 @@
   services.displayManager.ly.enable = true;
 
   # ZSH
-  programs.fish.enable = true;
+  programs.zsh.enable = true;
 
   # FIREFOX
   programs.firefox.enable = true;
@@ -200,7 +207,6 @@
     unrar
     gnutar
     p7zip
-    fish
     zip 
     unzip
     gvfs

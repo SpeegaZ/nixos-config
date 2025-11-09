@@ -1,4 +1,4 @@
-{ inputs, lib, config, pkgs, ... } :
+{ inputs, pkgs, ... } :
 
 {
   home.username = "vaayuu";
@@ -33,12 +33,10 @@
     mako
 	era
 	openutau	
+	ani-cli
 	librewolf
-	vdhcoapp
-	alacritty
-	emacs
 
-	ghostty
+	alacritty
 	contour
 	dbeaver-bin
 	
@@ -87,10 +85,12 @@
   imports = [
    
     (import ./term/kitty/kitty.nix { inherit pkgs; })
+    (import ./term/alacritty/alacritty.nix { inherit pkgs; })
     (import ./shell/zsh/zsh.nix { inherit pkgs; })
-    (import ./shell/starship/starship.nix { inherit pkgs; })
+    (import ./shell/bash/bash.nix { inherit pkgs; })
+    #(import ./shell/starship/starship.nix { inherit pkgs; })
     (import ./editor/vscodium/vscodium.nix { inherit pkgs; })
-    (import ./util/waybar/waybar.nix { inherit pkgs; })
+    (import ./ui/waybar/waybar.nix { inherit pkgs; })
     (import ./wm/hyprland/hyprland.nix { inherit pkgs; })
   ];
 }
