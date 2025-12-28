@@ -12,7 +12,6 @@
       		ff = "fastfetch";
       		cat = "bat";
       		vi = "nvim";
-	  		feh = "feh -. -Z --image-bg black";
     	};
     	history = {
       		saveNoDups = true;

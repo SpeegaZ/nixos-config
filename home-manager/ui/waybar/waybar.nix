@@ -82,13 +82,13 @@
 	* {
 		
 	    border : none;
-	    font-family : Iosevka Nerd Font Mono;
+	    font-family : Iosevka Nerd Font Propo;
 	    font-size : 14px;
 	}
 
 	window#waybar {
 	    background-color : @background;
-	    border-radius : 6px;
+	    border-radius : 0px;
 	    color : @foreground;
 	    opacity : 1;
 	    transition-property : background-color;
@@ -277,9 +277,9 @@
       position = "top";
       margin = "8px 10px -2px 10px";	
 
-      modules-left = [ "custom/distro" "hyprland/workspaces" ];
+      modules-left = [ "hyprland/workspaces" ];
       modules-center = [ "clock" ];
-      modules-right = [ "temperature" "memory" "cpu" "pulseaudio" "backlight" "battery" "tray" "network"  "custom/power" ];
+      modules-right = [ "temperature" "memory" "cpu" "pulseaudio" "backlight" "battery" "network" "tray" ];
 
 
       "hyprland-workspaces" = {
@@ -289,29 +289,11 @@
 	warp-on-scroll = true;
 	format = "{name}";
 	format-icons = {
+	    
 		    
 	};
-
-	persistant-workspaces = {
-	  "*" = 4;
-	};
       };
 
-
-
-      "custom/power" = {
-	format = "";
-	tooltip = false;
-	on-click = "wlogout";
-      };
-
-      "custom/distrologo" = {
-	on-click = "rofi -show drun";
-	format = "{icon}";
-	format-icons = { 
-	  "default" = "";
-	};
-      };
 
       "pulseaudio" = {
           format = "{icon}{volume}% {format_source}";
@@ -365,8 +347,7 @@
 
         "clock" = {
           tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-	        format = " {:%H:%M}";
-	        format-alt = " {:%A, %B %d, %Y}";
+	        format = "{:%H:%M  %A %b %d}";
         };
 
         "cpu" = {

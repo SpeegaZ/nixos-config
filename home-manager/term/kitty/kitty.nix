@@ -8,9 +8,6 @@
       font_size = 15.0;
       background_opacity = 1;
       window_padding_width = 4;
-
-      cursor_shape = "block";
-      cursor_blink = false;
     };
 
     extraConfig = ''
@@ -20,7 +17,7 @@
       selection_background #ebdbb2
       url_color #83a598
       cursor #928374
-	  cursor_text_color background
+      cursor_text_color background
 
       # Tabs
       active_tab_background #665c54

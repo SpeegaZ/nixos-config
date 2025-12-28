@@ -1,51 +1,41 @@
 {
-    description = "My NixOS config()";
+    description = "My NixOS config";
 
     inputs = {
-		nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-		nixpkgs-stable.url = "github:nixos/nixpkgs?ref=nixos-25.05";
-#		nixpkgs-master.url = "github:nixos/nixpkgs?ref=master";
-		home-manager = {
-	    	url = "github:nix-community/home-manager";
-	    	inputs.nixpkgs.follows = "nixpkgs";
-		};
+    	nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    	nixpkgs-stable.url = "github:nixos/nixpkgs?ref=nixos-25.11";
 
-
-		/*
-		hyprland.url = "github:hyprwm/Hyprland";
-		hyprland-plugin = {
-	    	url = "github:hyprwm/hyprland-plugins";
-	    	inputs.hyprland.follows = "hyprland";
-		};
-		*/
+    	home-manager = {
+	    url = "github:nix-community/home-manager";
+	    inputs.nixpkgs.follows = "nixpkgs";
+	};
+	
     };
 
-    outputs = { self, nixpkgs, nixpkgs-stable, home-manager, flake-parts,  ... } @ inputs : 
-  
+    outputs = { self, nixpkgs, nixpkgs-stable, home-manager, flake-parts, ... } @ inputs : 
     let 
-		system = "x86_64-linux";
-		lib = nixpkgs.lib;
-		specialArgs = { inherit system inputs; };
-
+	system = "x86_64-linux";
+	lib = nixpkgs.lib;
+	specialArgs = { inherit system inputs; };
     in 
     {
-		nixosConfigurations = {
-	    	tsuki = lib.nixosSystem {
-				inherit specialArgs;                        #This would make input available anywhere in NixOS config
-				modules = [
-		    		# Tsuki configuration.nix
-		    		./hosts/tsuki/configuration.nix
 
+	nixosConfigurations = {
+	    tsuki = lib.nixosSystem {
+		inherit specialArgs;                        #This would make input available anywhere in NixOS config
+		modules = [
+		    # Tsuki configuration.nix
+		    ./hosts/tsuki/configuration.nix
 
-		    		home-manager.nixosModules.home-manager {
-						home-manager.useGlobalPkgs = true;
-						home-manager.useUserPackages = true;
-						home-manager.backupFileExtension = "backup";
+		    home-manager.nixosModules.home-manager {
+			home-manager.useGlobalPkgs = true;
+			home-manager.useUserPackages = true;
+    			home-manager.backupFileExtension = "backup";
 
-						home-manager.users.vaayuu = import ./home-manager/home.nix;
-		    		} 
-				];
-	    	};
-		};
+	    		home-manager.users.vaayuu = import ./home-manager/home.nix;
+		    } 
+	    	];
+	   };
+	};
     };
 }

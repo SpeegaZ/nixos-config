@@ -3,23 +3,26 @@
 {
   home.username = "vaayuu";
   home.homeDirectory = "/home/vaayuu";
-  home.stateVersion = "25.05";
+  home.stateVersion = "25.11";
   
   programs.home-manager.enable = true;
   
   home.packages = with pkgs; [
     bat 
-    protonvpn-gui
     vivaldi
-    firefox-devedition
-    feh
+	imv
     bibata-cursors
     brave
+	obs-studio
+	element
+	element-desktop
+
+    # Gaming
     heroic
+
     libwebp
     popsicle
     godot
-    vscodium
     obsidian
     mpv
     zathura
@@ -28,24 +31,24 @@
     gearlever
     grim
     slurp
-    gimp3
     kdePackages.kdenlive
     mako
-	era
-	openutau	
-	ani-cli
-	librewolf
-
-	alacritty
-	contour
-	dbeaver-bin
+    era
+    openutau	
+    ani-cli
+    protonvpn-gui
+    librewolf
+    foot
 	
   # --- Dev-tools --- 
+    tmux
     gcc15
     python314
     gnumake
-	cmake
+    cmake
+    pkg-config
     lua
+    dbeaver-bin
   ];
 
   home.pointerCursor = {
@@ -83,13 +86,8 @@
   };
   
   imports = [
-   
-    (import ./term/kitty/kitty.nix { inherit pkgs; })
-    (import ./term/alacritty/alacritty.nix { inherit pkgs; })
     (import ./shell/zsh/zsh.nix { inherit pkgs; })
     (import ./shell/bash/bash.nix { inherit pkgs; })
-    #(import ./shell/starship/starship.nix { inherit pkgs; })
-    (import ./editor/vscodium/vscodium.nix { inherit pkgs; })
     (import ./ui/waybar/waybar.nix { inherit pkgs; })
     (import ./wm/hyprland/hyprland.nix { inherit pkgs; })
   ];

@@ -7,7 +7,6 @@
 
 	plugins = with pkgs.hyprlandPlugins; [
 		hyprscrolling	
-		hyprsplit	
 	]; 
 	
 	extraConfig = ''
@@ -23,7 +22,7 @@ monitor= eDP-1, 1920x1080@60, 0x0, 1
 ###################
 
 # Set programs that you use
-$terminal = alacritty
+$terminal = foot
 $fileManager = thunar
 $menu = rofi -show drun
 $screenshot = ~/nixos-config/home-manager/scripts/snap.sh
@@ -80,7 +79,7 @@ decoration {
     rounding = 0
 
     active_opacity = 0.9
-    inactive_opacity = 0.8
+    inactive_opacity = 0.9
 
     shadow {
         enabled = true
@@ -91,10 +90,10 @@ decoration {
 
     blur {
         enabled = true
-        size = 3
+        size = 4
         passes = 1
 
-        vibrancy = 0.1696
+        vibrancy = 0.3392
     }
 }
 
@@ -122,7 +121,7 @@ animations {
     animation = fadeLayersIn, 1, 1.79, almostLinear
     animation = fadeLayersOut, 1, 1.39, almostLinear
     animation = workspaces, 1, 1.94, almostLinear, fade
-    animation = workspacesIn, 1, 1.21, almostLinear, fade
+    animation = workspacesIn, 1, 1.94, almostLinear, fade
     animation = workspacesOut, 1, 1.94, almostLinear, fade
 }
 
@@ -182,14 +181,14 @@ bind = $mainMod, M, exit,
 bind = $mainMod, E, exec, $fileManager
 bind = $mainMod, V, togglefloating,
 bind = $mainMod, R, exec, $menu
-bind = $mainMod, L, pseudo, # dwindle
-bind = $mainMod, J, togglesplit, # dwindle
+bind = $mainMod, U, pseudo, # dwindle
+bind = $mainMod, T, togglesplit, # dwindle
 bind = $mainMod, F, fullscreen,
 
-bind = $mainMod, left, movefocus, l
-bind = $mainMod, right, movefocus, r
-bind = $mainMod, up, movefocus, u
-bind = $mainMod, down, movefocus, d
+bind = $mainMod, H, movefocus, l
+bind = $mainMod, L, movefocus, r
+bind = $mainMod, K, movefocus, u
+bind = $mainMod, J, movefocus, d
 
 bind = $mainMod, 1, workspace, 1
 bind = $mainMod, 2, workspace, 2

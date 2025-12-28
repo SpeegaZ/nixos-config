@@ -46,7 +46,7 @@
   /* --- USERS --- */
   users.users.vaayuu = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "audio" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" "audio" "libvirtd" ]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
     packages = with pkgs; [
       tree
@@ -55,23 +55,13 @@
   };
 
 
+
   /* --- UNFREE_PACKAGES --- */
   nixpkgs.config.allowUnfree = true;
 
 
   /* --- TIMEZONE --- */ 
   time.timeZone = "Asia/Kolkata";
-
-
-  /* --- X11_settings --- */
-  services = {
-    xserver = {
-      enable = true;
-      videoDrivers = [ "modesetting" ];
-      xkb.layout = "us";
-      excludePackages = [ pkgs.xterm ];
-	};
-  };
 
 
   /* --- POLKIT --- */ 
@@ -90,7 +80,17 @@
     };
   };
 
-    
+
+  /* --- VIRTUALISATION --- */
+  virtualisation.libvirtd = {
+	enable = true;
+	qemu = {
+		package = pkgs.qemu_kvm;
+	};
+  };
+  programs.virt-manager.enable = true;
+
+	
   /* --- AUDIO_SERVICES_AND_PROCESS_HANDLER --- */
   security.rtkit.enable = true;
   services.pipewire = {
@@ -122,8 +122,6 @@
       libvdpau-va-gl
     ];
   };
-
-  /* --- VIRTUALISATION --- */
   
 
   /* --- SYSTEM_PROGRAMS --- */
@@ -143,17 +141,9 @@
   /* --- SQL --- */
   services.mysql = {
   	enable = true;
-	package = pkgs.mariadb;
+		package = pkgs.mariadb;
   };
 
-
-    /*
-    # SDDM
-    services.displayManager.sddm = {
-	enable = true;
-	wayland.enable = true;
-    };
-    */
   services.displayManager.ly.enable = true;
 
   # ZSH
@@ -180,28 +170,27 @@
   /* --- SYSTEM_PACKAGES --- */
   environment.systemPackages = with pkgs; [
     brightnessctl
-    hyprland
-	playerctl
+    playerctl
     neovim    
     wget
     git
     fastfetch
     wl-clipboard
-    wlogout
     wlsunset
-    kitty
     btop
     rofi
     waybar
+    gnome-clocks
     mangohud
     protonup-ng
 	
-	#file-manager
-	xfce.thunar
-	xfce.thunar-archive-plugin
-	xfce.thunar-media-tags-plugin
-	xfce.tumbler
+    #file-manager
+    xfce.thunar
+    xfce.thunar-archive-plugin
+    xfce.thunar-media-tags-plugin
+    xfce.tumbler
 
+    libnotify
     file-roller
     pavucontrol
     unrar
@@ -212,37 +201,42 @@
     gvfs
     udiskie
     udisks2
-    starship
     swww
     mesa
-	mesa-demos
+    mesa-demos
     vulkan-loader
     vulkan-tools
     vulkan-validation-layers
     libva
     lxqt.lxqt-policykit
 
-	(discord.override {
-		withVencord = true;
-	})
+    (discord.override {
+	withVencord = true;
+    })
 
-	man
-	man-pages
-	man-pages-posix
-	stdmanpages
-	stdman
-	tldr
+    # UI
+    eww
+
+    # Man pages
+    man
+    man-pages
+    man-pages-posix
+    stdmanpages
+    stdman
+    tldr
   ];
   
   
   /* --- FONT_PACKAGES --- */
   fonts.packages = with pkgs; [
     nerd-fonts.iosevka
-	nerd-fonts.symbols-only
+    nerd-fonts.symbols-only
     noto-fonts
     noto-fonts-color-emoji
     fontconfig
     liberation_ttf
+    noto-fonts-cjk-serif
+    noto-fonts-cjk-sans
     font-awesome
   ];
 
