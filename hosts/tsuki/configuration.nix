@@ -17,8 +17,7 @@
 	};
 	optimise.automatic = true;
   };
-	  
-    
+
 
   /* --- BOOTLOADER --- */
   boot.loader = {
@@ -40,13 +39,13 @@
     hostName = "tsuki";
     networkmanager.enable = true;
     firewall.enable = true;
-  };
+ };
 
 
   /* --- USERS --- */
   users.users.vaayuu = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "audio" "libvirtd" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" "audio" ]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
     packages = with pkgs; [
       tree
@@ -79,16 +78,6 @@
       };
     };
   };
-
-
-  /* --- VIRTUALISATION --- */
-  virtualisation.libvirtd = {
-	enable = true;
-	qemu = {
-		package = pkgs.qemu_kvm;
-	};
-  };
-  programs.virt-manager.enable = true;
 
 	
   /* --- AUDIO_SERVICES_AND_PROCESS_HANDLER --- */
@@ -138,6 +127,7 @@
     ];
   };
 
+
   /* --- SQL --- */
   services.mysql = {
   	enable = true;
@@ -169,6 +159,7 @@
 
   /* --- SYSTEM_PACKAGES --- */
   environment.systemPackages = with pkgs; [
+	hyprlock
     brightnessctl
     playerctl
     neovim    
@@ -179,16 +170,17 @@
     wlsunset
     btop
     rofi
+	fuzzel
     waybar
     gnome-clocks
     mangohud
     protonup-ng
 	
     #file-manager
-    xfce.thunar
-    xfce.thunar-archive-plugin
-    xfce.thunar-media-tags-plugin
-    xfce.tumbler
+    thunar
+    thunar-archive-plugin
+    thunar-media-tags-plugin
+    tumbler
 
     libnotify
     file-roller
@@ -221,9 +213,6 @@
     man
     man-pages
     man-pages-posix
-    stdmanpages
-    stdman
-    tldr
   ];
   
   

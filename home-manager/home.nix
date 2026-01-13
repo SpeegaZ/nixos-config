@@ -10,10 +10,10 @@
   home.packages = with pkgs; [
     bat 
     vivaldi
+	floorp-bin
 	imv
     bibata-cursors
     brave
-	obs-studio
 	element
 	element-desktop
 
@@ -21,7 +21,6 @@
     heroic
 
     libwebp
-    popsicle
     godot
     obsidian
     mpv
@@ -90,5 +89,6 @@
     (import ./shell/bash/bash.nix { inherit pkgs; })
     (import ./ui/waybar/waybar.nix { inherit pkgs; })
     (import ./wm/hyprland/hyprland.nix { inherit pkgs; })
+		#(import ./wm/mangowc/mangowc.nix { inherit pkgs; })
   ];
 }

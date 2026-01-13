@@ -4,10 +4,6 @@
   wayland.windowManager.hyprland = {
   	enable = true;
 	xwayland.enable = true;
-
-	plugins = with pkgs.hyprlandPlugins; [
-		hyprscrolling	
-	]; 
 	
 	extraConfig = ''
 
@@ -24,7 +20,7 @@ monitor= eDP-1, 1920x1080@60, 0x0, 1
 # Set programs that you use
 $terminal = foot
 $fileManager = thunar
-$menu = rofi -show drun
+$menu = fuzzel
 $screenshot = ~/nixos-config/home-manager/scripts/snap.sh
 
 #################
@@ -64,15 +60,7 @@ general {
 
     allow_tearing = false
 
-    layout = scrolling
-}
-
-plugin {
-	hyprscrolling {
-		fullscreen_on_one_column = true
-		column_width = 1
-		follow_focus = true
-	}
+	layout = master
 }
 
 decoration {
@@ -91,9 +79,9 @@ decoration {
     blur {
         enabled = true
         size = 4
-        passes = 1
+        passes = 3
 
-        vibrancy = 0.3392
+        vibrancy = 0.5000
     }
 }
 
@@ -184,6 +172,8 @@ bind = $mainMod, R, exec, $menu
 bind = $mainMod, U, pseudo, # dwindle
 bind = $mainMod, T, togglesplit, # dwindle
 bind = $mainMod, F, fullscreen,
+bind = $mainMod, Space, exec, hyprlock
+
 
 bind = $mainMod, H, movefocus, l
 bind = $mainMod, L, movefocus, r

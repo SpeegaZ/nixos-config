@@ -6,36 +6,38 @@
     	nixpkgs-stable.url = "github:nixos/nixpkgs?ref=nixos-25.11";
 
     	home-manager = {
-	    url = "github:nix-community/home-manager";
-	    inputs.nixpkgs.follows = "nixpkgs";
-	};
-	
+	    	url = "github:nix-community/home-manager";
+	    	inputs.nixpkgs.follows = "nixpkgs";
+		};
+
+		spicetify-nix.url = "github:Greg-L/spicetify-nix";
+
     };
 
-    outputs = { self, nixpkgs, nixpkgs-stable, home-manager, flake-parts, ... } @ inputs : 
-    let 
-	system = "x86_64-linux";
-	lib = nixpkgs.lib;
-	specialArgs = { inherit system inputs; };
+    outputs = { self, nixpkgs, nixpkgs-stable, home-manager, flake-parts, spicetify, ... } @ inputs : let 
+		system = "x86_64-linux";
+		lib = nixpkgs.lib;
+		specialArgs = { inherit system inputs; };
     in 
     {
-
 	nixosConfigurations = {
 	    tsuki = lib.nixosSystem {
-		inherit specialArgs;                        #This would make input available anywhere in NixOS config
-		modules = [
-		    # Tsuki configuration.nix
-		    ./hosts/tsuki/configuration.nix
+			inherit specialArgs;                        #This would make input available anywhere in NixOS config
+			modules = [
+		    	# Tsuki configuration.nix
+		    	./hosts/tsuki/configuration.nix
 
-		    home-manager.nixosModules.home-manager {
-			home-manager.useGlobalPkgs = true;
-			home-manager.useUserPackages = true;
-    			home-manager.backupFileExtension = "backup";
+				spicetify-nix.nixosModules.spicetify
 
-	    		home-manager.users.vaayuu = import ./home-manager/home.nix;
-		    } 
+		    	home-manager.nixosModules.home-manager {
+					home-manager.useGlobalPkgs = true;
+					home-manager.useUserPackages = true;
+    				home-manager.backupFileExtension = "backup";
+
+	    			home-manager.users.vaayuu = import ./home-manager/home.nix;
+		    	} 
 	    	];
-	   };
+		};
 	};
-    };
+	};
 }
