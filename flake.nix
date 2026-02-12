@@ -10,11 +10,10 @@
 	    	inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-		spicetify-nix.url = "github:Greg-L/spicetify-nix";
 
     };
 
-    outputs = { self, nixpkgs, nixpkgs-stable, home-manager, flake-parts, spicetify, ... } @ inputs : let 
+    outputs = { self, nixpkgs, nixpkgs-stable, home-manager, flake-parts, ... } @ inputs : let 
 		system = "x86_64-linux";
 		lib = nixpkgs.lib;
 		specialArgs = { inherit system inputs; };
@@ -27,7 +26,6 @@
 		    	# Tsuki configuration.nix
 		    	./hosts/tsuki/configuration.nix
 
-				spicetify-nix.nixosModules.spicetify
 
 		    	home-manager.nixosModules.home-manager {
 					home-manager.useGlobalPkgs = true;

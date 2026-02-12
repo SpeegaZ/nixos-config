@@ -141,6 +141,9 @@ input {
 
     follow_mouse = 1
 
+	repeat_delay = 200
+	repeat_rate = 35
+
     sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
 
     touchpad {
@@ -229,9 +232,9 @@ bindl = , XF86AudioPrev, exec, playerctl previous
 ### WINDOWS AND WORKSPACES ###
 ##############################
 
-windowrulev2 = suppressevent maximize, class:.*
+windowrule = suppress_event maximize, match:class *
 
-windowrulev2 = nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0
+windowrule = no_focus on, match:class ^$, match:title ^$, match:xwayland 1, match:float 1, match:fullscreen 0, match:pin 0
 	  '';
 	};
 }

@@ -19,6 +19,10 @@
   };
 
 
+  /* --- KERNEL_PACKAGES --- */
+	#boot.kernelPackages = pkgs.linuxPackages_zen;
+
+
   /* --- BOOTLOADER --- */
   boot.loader = {
     grub = {
@@ -114,6 +118,9 @@
   
 
   /* --- SYSTEM_PROGRAMS --- */
+  # NIRI
+  programs.niri.enable = true;
+
   # HYPRLAND
   programs.hyprland = {
     enable = true;
@@ -159,6 +166,7 @@
 
   /* --- SYSTEM_PACKAGES --- */
   environment.systemPackages = with pkgs; [
+	xwayland-satellite
 	hyprlock
     brightnessctl
     playerctl

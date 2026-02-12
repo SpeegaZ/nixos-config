@@ -12,16 +12,17 @@
     vivaldi
 	floorp-bin
 	imv
-    bibata-cursors
     brave
 	element
 	element-desktop
+	assetripper
 
     # Gaming
     heroic
+	
+	
 
     libwebp
-    godot
     obsidian
     mpv
     zathura
@@ -30,16 +31,24 @@
     gearlever
     grim
     slurp
-    kdePackages.kdenlive
+		#kdePackages.kdenlive
     mako
     era
-    openutau	
-    ani-cli
+		#openutau	
     protonvpn-gui
     librewolf
     foot
+
+	colloid-icon-theme
+	openzone-cursors
+
+	
 	
   # --- Dev-tools --- 
+	dotnetCorePackages.sdk_9_0_1xx
+	vscodium
+    godot-mono
+	godot
     tmux
     gcc15
     python314
@@ -52,8 +61,8 @@
 
   home.pointerCursor = {
     gtk.enable = true;
-    name = "Bibata-Modern-Ice";
-    package = pkgs.bibata-cursors;
+    name = "OpenZone_Black";
+    package = pkgs.openzone-cursors;
     size = 24;
   };
 
@@ -68,13 +77,13 @@
     };
 
     iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme;
+      name = "Colloid-Dark";
+      package = pkgs.colloid-icon-theme;
     };
 
     cursorTheme = {
-      name = "Bibata-Modern-Ice";
-      package = pkgs.bibata-cursors;
+      name = "OpenZone_Black";
+      package = pkgs.openzone-cursors;
     };
   };
 
@@ -89,6 +98,5 @@
     (import ./shell/bash/bash.nix { inherit pkgs; })
     (import ./ui/waybar/waybar.nix { inherit pkgs; })
     (import ./wm/hyprland/hyprland.nix { inherit pkgs; })
-		#(import ./wm/mangowc/mangowc.nix { inherit pkgs; })
   ];
 }
