@@ -9,8 +9,6 @@
 	    	url = "github:nix-community/home-manager";
 	    	inputs.nixpkgs.follows = "nixpkgs";
 		};
-
-
     };
 
     outputs = { self, nixpkgs, nixpkgs-stable, home-manager, flake-parts, ... } @ inputs : let 

@@ -9,7 +9,7 @@
       		nrsf = "sudo nixos-rebuild switch --flake ~/nixos-config#tsuki";
       		ncgd = "sudo nix-collect-garbage -d";
       		nfup = "sudo nix flake update --flake ~/nixos-config/";
-      		ff = "fastfetch";
+      		ff = "fastfetch -c examples/13.jsonc";
       		cat = "bat";
       		vi = "nvim";
     	};

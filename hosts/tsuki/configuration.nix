@@ -50,7 +50,7 @@
   users.users.vaayuu = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "audio" ]; # Enable ‘sudo’ for the user.
-    shell = pkgs.zsh;
+    shell = pkgs.bash;
     packages = with pkgs; [
       tree
 	  file
@@ -101,7 +101,6 @@
 
   /* --- MOUNT_DEVICE_DETECTION --- */
   services = {
-    gvfs.enable = true;
     udisks2.enable = true;
   };
 
@@ -123,15 +122,16 @@
 
   # HYPRLAND
   programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
+    enable = false;
+    xwayland.enable = false;
   };
 
   xdg.portal = {
     enable = true;
-    extraPortals = with pkgs; [
+    extraPortals = lib.mkForce (with pkgs; [
       xdg-desktop-portal-gtk
-    ];
+    ]);
+	config.common.default = "gtk";
   };
 
 
@@ -141,13 +141,20 @@
 		package = pkgs.mariadb;
   };
 
+  # DISPLAY_MANAGER
   services.displayManager.ly.enable = true;
 
-  # ZSH
-  programs.zsh.enable = true;
+  # THUNAR_PREF
+  programs.xfconf.enable = true;
 
   # FIREFOX
   programs.firefox.enable = true;
+
+  # APPIMAGE
+  programs.appimage = {
+	enable = true;
+	binfmt = true;
+  };
 
   # STEAM_AND_GAMEMODE
   programs.steam = {
@@ -160,14 +167,19 @@
   /* --- SESSION_VARIABLES --- */
   # Steam
   environment.sessionVariables = {
+	XDG_CURRENT_DESKTOP = "niri";
+	XDG_SESSION_DESKTOP = "niri";
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/vaayuu/.steam/root/compatibilitytools.d";
   };
+
+  environment.gnome.excludePackages = with pkgs; [
+	xdg-desktop-portal-gnome
+  ];
 
 
   /* --- SYSTEM_PACKAGES --- */
   environment.systemPackages = with pkgs; [
 	xwayland-satellite
-	hyprlock
     brightnessctl
     playerctl
     neovim    
@@ -178,10 +190,7 @@
     wlsunset
     btop
     rofi
-	fuzzel
     waybar
-    gnome-clocks
-    mangohud
     protonup-ng
 	
     #file-manager
@@ -190,15 +199,16 @@
     thunar-media-tags-plugin
     tumbler
 
+	kdePackages.ark
+	
+
     libnotify
-    file-roller
     pavucontrol
     unrar
     gnutar
     p7zip
     zip 
     unzip
-    gvfs
     udiskie
     udisks2
     swww
@@ -213,9 +223,6 @@
     (discord.override {
 	withVencord = true;
     })
-
-    # UI
-    eww
 
     # Man pages
     man

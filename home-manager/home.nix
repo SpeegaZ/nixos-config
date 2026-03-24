@@ -10,48 +10,37 @@
   home.packages = with pkgs; [
     bat 
     vivaldi
-	floorp-bin
 	imv
     brave
-	element
 	element-desktop
 	assetripper
-
-    # Gaming
     heroic
-	
-	
-
+	pixelorama
+	blender
     libwebp
     obsidian
     mpv
     zathura
-    papirus-icon-theme
-    gruvbox-gtk-theme
-    gearlever
+	gearlever
     grim
     slurp
-		#kdePackages.kdenlive
     mako
-    era
-		#openutau	
+	swaybg
     protonvpn-gui
     librewolf
+	krita
     foot
 
-	colloid-icon-theme
+	papirus-icon-theme
+	gruvbox-gtk-theme
 	openzone-cursors
 
 	
-	
   # --- Dev-tools --- 
-	dotnetCorePackages.sdk_9_0_1xx
 	vscodium
-    godot-mono
 	godot
-    tmux
     gcc15
-    python314
+    python315
     gnumake
     cmake
     pkg-config
@@ -63,7 +52,7 @@
     gtk.enable = true;
     name = "OpenZone_Black";
     package = pkgs.openzone-cursors;
-    size = 24;
+    size = 20;
   };
 
   qt.enable = true;
@@ -77,8 +66,8 @@
     };
 
     iconTheme = {
-      name = "Colloid-Dark";
-      package = pkgs.colloid-icon-theme;
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
     };
 
     cursorTheme = {
@@ -86,17 +75,9 @@
       package = pkgs.openzone-cursors;
     };
   };
-
-  home.sessionVariables = {
-    XDG_CURRENT_DESKTOP = "Hyprland";
-    XDG_SESSION_DESKTOP = "Hyprland";
-    GDK_BACKEND = "wayland,x11";
-  };
   
   imports = [
-    (import ./shell/zsh/zsh.nix { inherit pkgs; })
     (import ./shell/bash/bash.nix { inherit pkgs; })
     (import ./ui/waybar/waybar.nix { inherit pkgs; })
-    (import ./wm/hyprland/hyprland.nix { inherit pkgs; })
   ];
 }

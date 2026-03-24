@@ -5,9 +5,9 @@
     enable = true;
 
     style = ''
-	/* Tokyonight palette */
-      /*@define-color background #1a1b26;
-        @define-color foreground #c0caf5;
+	/* Tokyonight palette 
+    @define-color background #1a1b26;
+    @define-color foreground #c0caf5;
 	@define-color alt_background #1f1f2d;
 	@define-color accent #7aa2f7;
 
@@ -30,7 +30,8 @@
 	@define-color alt_white #c0caf5; */
 
 	/* Kanagawa Palette */ 
-        @define-color foreground #dcd7ba;
+	/*
+    @define-color foreground #dcd7ba;
 	@define-color background #1f1f28;
 	@define-color alt_background #25252f;
 	@define-color accent #7aa89f;
@@ -52,10 +53,10 @@
 	@define-color alt_magenta #938aa9;
 	@define-color alt_cyan #7aa89f;
 	@define-color alt_white #dcd7ba; 
+	*/
 
 
 	/* Gruvbox Palette */ 
-
 	@define-color foreground #ebdbb2;
 	@define-color background #1d2021;
 	@define-color alt_background #282828;
@@ -277,21 +278,14 @@
       position = "top";
       margin = "8px 10px -2px 10px";	
 
-      modules-left = [ "hyprland/workspaces" ];
+      modules-left = [ "niri/workspaces" ];
       modules-center = [ "clock" ];
       modules-right = [ "temperature" "memory" "cpu" "pulseaudio" "backlight" "battery" "network" "tray" ];
 
 
       "hyprland-workspaces" = {
-	disable-scroll = true;
-	all-outputs = true;
-	ignore-hidden = false;
-	warp-on-scroll = true;
-	format = "{name}";
-	format-icons = {
-	    
-		    
-	};
+		all-outputs = true;
+		format = "{name}";
       };
 
 
